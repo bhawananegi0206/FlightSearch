@@ -1,0 +1,100 @@
+.search__box {
+  background:#000;
+  margin: 87px 0 0 4%;
+  padding: 35px 20px;
+  border-radius: 5px;
+  opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+  .search__box {
+    width: 75%;
+    margin: 45px auto 50px;
+  }
+}
+
+.tabs {
+  display: flex;
+  list-style: none;  
+  padding: 5px;  
+  border-bottom: 2px solid #c7c7c7;
+}
+
+.tab {
+  cursor: pointer;
+  color:#757575;
+}
+
+.tab.active {
+  color:#ffffff;
+  font-weight: bold;
+}
+.tab.first{
+  margin: 0 28px;
+}
+
+.input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 0.5px 3px 0 #999;
+  background-color: #fafafa;
+
+}
+
+.passengers {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;  
+  white-space: nowrap;
+}
+
+.passenger__count {
+  color: #3f51b5;
+  font-weight: bolder;
+  line-height: 35px;
+  margin-right: 10px;
+}
+
+
+.price-range__label {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #000;
+  font-weight: bolder;
+}
+.price-range__label label{
+  color: #FFF;
+  font-weight: 300;
+}
+
+.input-range__label-container {
+  color: #fff;
+}
+
+.input-range__track {
+  background: #ffa335;
+}
+
+.input-range__track--active {
+  background: #3f51b5;
+}
+.input-range{
+  width: 95%;
+  margin-left: 4px;
+}
+.form__submit {
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  background: #A7F432;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  margin: 50px auto 0;
+  display: block;
+}
+.react-datepicker__input-container,.react-datepicker-wrapper{
+  display: block;
+}

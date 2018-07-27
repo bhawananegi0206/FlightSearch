@@ -1,0 +1,35 @@
+html {
+ background-color: #f0f0f0    
+}
+
+.app {
+  width: 100%;
+  background-color: #1e063c;
+  background-image: url(/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: -4px;
+}
+
+.app__content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.search__box {
+  background: #ffa335;
+  opacity: 0.85;
+}
+
+.block {
+  display: block !important;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+  .app__content {
+    display: block;
+  }
+}
+

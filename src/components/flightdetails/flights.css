@@ -1,0 +1,118 @@
+.flights {
+  margin: 10px 2% 0 10px;
+  padding: 2%;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.flight--timings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flights__details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color:#fff;
+}
+
+.flight {
+  display: flex;
+  justify-content: space-around;
+  border:3px solid #c9e0f1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 2%;
+}
+
+.flightinfo__details {
+  width: 50%;
+  color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .flightinfo__details {
+    width: 100%;
+    margin-left: 30px;
+  }
+}
+
+.flightinfo__timings span{
+  color: #a79bb2;
+}
+
+.flightinfo__logo {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around; 
+}
+
+.flightinfo__logo .airline {
+ 
+  width: 100px;
+  height: 95px;
+  background-size: 100px 95px;
+  background-repeat: no-repeat;
+  margin:10px auto;
+}
+
+.flightinfo__departure, flightinfo__return {
+  width: 50%;
+  float: left;
+}
+
+
+.indigo {
+  background-image: url(/images/indigo_logo.jpg);
+}
+.spicejet {
+  background-image: url(/images/spicejet_logo.jpg);
+  background-size: 100px;    
+}
+
+.booking--button {
+  width: auto;
+  height: 40px;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 5px;
+  background:#A7F432;
+  border: none;
+  color:#000;
+  margin-bottom:15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .flights {
+    width: 94%;
+    padding: 10px;
+  }
+
+  .flight {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.flight_availableseats {
+       color: #3f51b5;
+       font-size: 16px;
+       font-weight: bold;
+       text-align: center;
+       margin-bottom: 15px;
+      }
+  .flight_noavailable{
+    text-align: center;
+    padding: 100px;
+    color:#fff;
+    font-size: 1.5rem;
+  }
+  .flight__headertitle{
+    font-size: 1.5rem;
+  }
+  .flight--timings span{
+    font-size: 1rem;
+  }

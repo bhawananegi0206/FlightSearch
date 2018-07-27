@@ -1,0 +1,34 @@
+Scenario as per data present
+Origin city : PUNE
+Destination city : DELHI
+Date of journey : 22nd july 2018
+max seats available : 4
+
+Sample data
+
+ {
+    "id": 1,
+    "airline_code": "spicejet",
+    "airline": "Spicejet",
+    "number": "SJ-111",
+    "from": "PUNE",
+    "to": "DELHI",
+    "from_code": "PNQ",
+    "to_code": "DEL",
+    "depart_date": "Sun Jul 22 2018 17:03:07 GMT+0530 (IST)",
+    "arrive_date": "Sun Jul 22 2018 19:03:07 GMT+0530 (IST)",
+    "price": 3000,
+    "ticketavailable":4,
+    "return_trip": {
+      "airline": "Spicejet",
+      "number": "SJ-211",
+      "from": "DELHI",
+      "to": "PUNE",
+      "from_code": "DEL",
+      "to_code": "PNQ",
+      "depart_date": "Mon Jul 23 2018 10:03:07 GMT+0530 (IST)",
+      "arrive_date": "Mon Jul 23 2018 12:03:07 GMT+0530 (IST)",
+      "price": 3500,
+      "ticketavailable":3
+    }
+  }
