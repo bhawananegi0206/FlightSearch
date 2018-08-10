@@ -4,7 +4,7 @@ import './reset.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header/Header';
 import Search from './components/searchdetails/Search';
-import Flightsdetails from './components/flightdetails/Flights';
+import Flights from './components/flightdetails/Flights';
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
         <Header></Header>
         <section className="app__content">
           <Search></Search>
-          <Flightsdetails></Flightsdetails>
+          <Flights></Flights>
         </section>
       </div>
     );

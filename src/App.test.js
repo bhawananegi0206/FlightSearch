@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { configure, shallow ,mount} from 'enzyme';
 import { expect } from 'chai';
 import App from './App';
@@ -8,8 +7,9 @@ import Search from './components/searchdetails/Search';
 import configureMockStore from 'redux-mock-store';
 const mockStore = configureMockStore();
 
-import Adapter from 'enzyme-adapter-react-16'
+import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
+
 describe('App component testing', function() {
   it('main component exists', function() {
     const wrapper = shallow(<App />); 
@@ -26,13 +26,13 @@ describe('App component testing', function() {
 describe('Search component testing', function() {
   // Search functionality testing
     let store,initialstate;
-    initialstate ={ "flights": {}, "searchstring": "" };
+    initialstate ={"flights": {}, "searchstring": ""};
     store = mockStore(initialstate);
     
     it('search button field should be present', function() {
      
-      const searchwrapper = shallow(<Search  store={store} />);  
-      expect(searchwrapper.find("button")).to.exist;
+      const searchwrapper = mount(<Search  store={store} />);  
+      expect(searchwrapper.find("button")).to.have.length(1);
     })
   
     it('Should call the submit function when clicked', () => {

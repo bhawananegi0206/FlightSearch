@@ -70,23 +70,30 @@ class Flights extends Component {
   }
 
   render() {
-    let flights = this.props.flights.filter((flight) => {
-      flight.depart_date = moment(flight.depart_date);
-      flight.return_trip.depart_date = moment(flight.return_trip.depart_date);
-      return this.checkFlightAvailability(flight);
-    })
+    let flightList = [],
+      flights,
+      flightDetails;
+    if (this.props.flights) {
 
-    let flightList = flights.map((flight) => {
-      return <FlightDetails key={flight.id} flight={flight}></FlightDetails>;
-    });
+      flights = this.props.flights.filter((flight) => {
+        flight.depart_date = moment(flight.depart_date);
+        flight.return_trip.depart_date = moment(flight.return_trip.depart_date);
+        return this.checkFlightAvailability(flight);
+      })
 
-    let flightDetails = flights[0];
-    if (flightDetails) {
+      flightList = flights.map((flight) => {
+        return <FlightDetails key={flight.id} flight={flight}></FlightDetails>;
+      });
+      flightDetails = flights[0];
+      if(flightDetails){
+
       flightDetails = {
         ...flightDetails,
         depart_day: moment(flightDetails.depart_date).format("Do MMM YYYY"),
         return_day: moment(flightDetails.return_trip.depart_date).format("Do MMM YYYY")
       };
+    }
+
     }
 
     return (

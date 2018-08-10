@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import { connect } from 'react-redux';
+
 import './flights.css'
 
 class FlightDetails extends Component {
@@ -8,8 +10,21 @@ class FlightDetails extends Component {
     super(props);
     this.state = {
       isReturnTrip: true,
-      bookingText: 'Book this flight'
+      bookingText: 'Book this flight',
+      disabled:false
     }
+    this.updateSeatsAvailable = this.updateSeatsAvailable.bind(this);
+  }
+
+  updateSeatsAvailable(event) {
+    this.setState({bookingText: 'Booked',disabled:true});
+    this.props.flight.ticketavailable  = this.props.flight.ticketavailable - 1 ;
+    this.props.updateSeatsAvailable({
+      flights: this.props.flight,
+      searchstring: this.props.searchstring
+
+    });
+    event.preventDefault();
   }
 
 
@@ -52,7 +67,7 @@ class FlightDetails extends Component {
           <div className={`airline ${flight.airline_code}`}></div>
           <button 
             className="booking--button"
-            onClick={() => this.setState({bookingText: 'Booked'})}>
+            onClick={this.updateSeatsAvailable} disabled={this.state.disabled}>
             {this.state.bookingText}
           </button>
 
@@ -67,4 +82,16 @@ class FlightDetails extends Component {
  }
 
 
-export default FlightDetails;
+ const mapStateToProps = (state) => {
+  return {
+    flights: state.flights,
+    searchstring: state.searchstring
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateSeatsAvailable: (data) => dispatch({ state: data, type: "updateseats" })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FlightDetails);

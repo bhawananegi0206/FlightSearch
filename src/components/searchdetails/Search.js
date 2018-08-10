@@ -43,13 +43,6 @@ class Search extends Component {
     event.preventDefault();
   }
 
-  refineSearch(price) {
-    const { store } = this.context;
-    store.dispatch({
-      type: 'PRICE_FILTER',
-      price: this.state.price
-    });
-  }
   handleTrip(tab) {
     let returnTrip = (tab === 1) ? false : true;
     this.setState({ returnTrip });
@@ -84,8 +77,8 @@ class Search extends Component {
               this.originCity = node;
             }} required list="mylist" />
             <datalist id="mylist">
-            {this.state.cities.map((item) =>
-                    <option value={item} />
+            {this.state.cities.map((item,index) =>
+                    <option key={"city" +index}value={item} />
             )}
            </datalist>
 
@@ -97,8 +90,8 @@ class Search extends Component {
               this.destinationCity = node;
             }} required list="listdestination"/>
             <datalist id="listdestination">
-            {this.state.cities.map((item) =>
-                    <option value={item} />
+            {this.state.cities.map((item,index) =>
+                    <option key={"dtcity" + index} value={item} />
             )}
            </datalist>
 
@@ -132,8 +125,8 @@ class Search extends Component {
               this.passengers = node;
             }} required list="passengerscount"/>
             <datalist id="passengerscount">
-            {this.state.passenger.map((item) =>
-                    <option value={item} />
+            {this.state.passenger.map((item,index) =>
+                    <option key={"passengers" + index} value={item} />
             )}
            </datalist>
           </div>

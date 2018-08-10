@@ -116,3 +116,10 @@
   .flight--timings span{
     font-size: 1rem;
   }
+  .booking--button{
+    cursor: pointer
+  }
+  .booking--button:disabled {
+    background-color: aqua;
+    cursor: default;
+}
