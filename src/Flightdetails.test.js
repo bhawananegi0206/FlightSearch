@@ -38,7 +38,7 @@ store = mockStore(initialstate);
 
 describe('FlightDetails', () =>
 it("component should render", () =>{
-const component = shallow(<Flightsdetails key={initialstate.flight.id} flight={initialstate.flight} />);
+const component = shallow(<Flightsdetails  store={store} key={initialstate.flight.id} flight={initialstate.flight} />);
 expect(component).to.exist;
 })
 
