@@ -3,6 +3,7 @@
   align-items: center;
   background-color: #000;
   height: 4.5em;
+  display: inline;
 }
 
 .header__logo {
